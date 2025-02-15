@@ -22,10 +22,15 @@
                 <?php
                 // http://localhost/PHP_labs/php_laba_1/3210_1/Lab_2.1/index.php
                     $current_time = date("H:i:s");
-                    $title_class .= "title__php"; // создаем переменную которую присвоим классу (странная схема, уточнить у учителя)
+                    $title_class .= "title__php"; // создаем переменную которую присвоим классу ///////////  вынести в html
                     echo "<h1 class='" . $title_class . "'>Привет, Мир!</h1>";
                     echo "<p>Текущее время: " . $current_time . "</p>";
+
+                    //это можно сделать в html и открыть скрипт внутри тега p <?$time?>
+                                         
+
                 ?>
+                
             </div>
         </main>
 
