@@ -1,0 +1,146 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.header {
+    background-color: #007bff; 
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__logo {
+   margin-right: auto;
+}
+
+.header__logo-image {
+    width: 50px; 
+    height: auto;
+}
+
+.header__title {
+    margin: 0;
+    font-size: 24px;
+    margin-right: auto;
+}
+
+.main {
+    padding: 20px;
+}
+
+.main__link {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.main__textarea {
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+
+.form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form__group {
+    margin-bottom: 15px;
+}
+
+.form__label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form__input,
+.form__select,
+.form__textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-size: 16px;
+}
+
+.form__textarea {
+    resize: none; 
+}
+
+.form__checkbox-label {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.form__button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form__button:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer__text {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* results.php */
+
+
+.header__title_result {
+    text-align: center;
+
+}
+
+.main__block_result {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.footer__descr_result {
+
+    text-align: center;
+    background-color: #bababa;
+}
