@@ -1,5 +1,5 @@
 <?php
-// http://localhost/PHP_labs/php_laba_1/3210_1/Lab_1/index.php
+// http://localhost/PHP_labs/php_laba_1/2/Lab_1/index.php
 
 // Задание 1
 //Арифметические операции. Дано: $a = 27; $b = 12; Найти: Значение гипотенузы с точностью до двух знаков после запятой

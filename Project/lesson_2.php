@@ -1,5 +1,5 @@
 <?php
-// http://localhost/PHP_labs/php_laba_1/3210_1/Project/lesson_2.php
+// http://localhost/PHP_labs/php_laba_1/Project/lesson_2.php
 
 $arr = [2, 'r', 6, 8];
 for ($i = 0; $i < sizeof($arr); $i++) {

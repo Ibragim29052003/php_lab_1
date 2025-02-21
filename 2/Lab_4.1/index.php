@@ -1,4 +1,4 @@
-<!-- // http://localhost/PHP_labs/php_laba_1/3210_1/Lab_4.1/index.php -->
+<!-- // http://localhost/PHP_labs/php_laba_1/2/Lab_4.1/index.php -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>

@@ -20,7 +20,7 @@
         <main>
             <div class="dynamic-content">
                 <?php
-                // http://localhost/PHP_labs/php_laba_1/3210_1/Lab_2.1/index.php
+                // http://localhost/PHP_labs/php_laba_1/2/Lab_2.1/index.php
                     $current_time = date("H:i:s");
                     $title_class .= "title__php"; // создаем переменную которую присвоим классу ///////////  вынести в html
                     echo "<h1 class='" . $title_class . "'>Привет, Мир!</h1>";

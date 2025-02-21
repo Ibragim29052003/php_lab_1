@@ -1,6 +1,6 @@
 <?php
 
-// http://localhost/PHP_labs/php_laba_1/3210_1/Lab_test_2/index.php
+// http://localhost/PHP_labs/php_laba_1/2/Lab_test_2/index.php
 
 // // Задание 1
 // //array_count_values. Дан массив с элементами 'a', 'b', 'c', 'b', 'a'. Подсчитайте сколько раз встречается каждая из букв.
@@ -84,16 +84,16 @@
 
 
 // Задание 5
-// array_keys, array_values, array_combine. Дан массив 'a'=>1, 'b'=>2, 'c'=>3'. Запишите в массив $keys ключи из этого массива, а в $values – значения.
+// // array_keys, array_values, array_combine. Дан массив 'a'=>1, 'b'=>2, 'c'=>3'. Запишите в массив $keys ключи из этого массива, а в $values – значения.
 
-$arr = ['a'=>1, 'b'=>2, 'c'=>3];
+// $arr = ['a'=>1, 'b'=>2, 'c'=>3];
 
-$keys = array_keys($arr);
-$values = array_values($arr);
+// $keys = array_keys($arr);
+// $values = array_values($arr);
 
-print_r($keys);
-print_r($values);
+// print_r($keys);
+// print_r($values);
 
-$combine = array_combine($keys, $values);
+// $combine = array_combine($keys, $values);
 
-print_r($combine);
+// print_r($combine);
