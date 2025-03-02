@@ -1,40 +1,33 @@
 <?php
-
-// use src\Models\Articles\Article;
-//  точка входа 
-
-
-spl_autoload_register(function (string $className) { // анонимная фунция 
-    require_once dirname(__DIR__).'\\'.$className.'.php' ;
-});
-    
-// spl_autoload_register("myAutoload");
-//     require_once dirname(__DIR__). '/src/Models/Articles/Article.php' ; 
-//     require_once dirname(__DIR__). '/src/Models/Users/User.php' ;
-    // echo dirname (__DIR__). '/src/Models/Article/Article.php';
     // http://localhost/PHP_labs/php_laba_1/Project/www/index.php
     // file:///Applications/XAMPP/xamppfiles/htdocs/PHP_labs/php_laba_1/Project/www/index.php
+    spl_autoload_register(function(string $className){
+        require_once dirname(__DIR__).'\\'.$className.'.php';
+    });
 
-    // $controller = new src\Controllers\MainController();
-    // $controller->sayHello() ;s
+    
+    $findRoute = false;
+    
+    $route = $_GET['route'] ?? '';
+    $patterns = require 'route.php';
+    foreach ($patterns as $pattern=>$controllerAndAction){
+        preg_match($pattern, $route, $matches);
+        if (!empty($matches)){
+            $findRoute = true;
+            unset($matches[0]);
+            $nameController = $controllerAndAction[0];
+            $actionName = $controllerAndAction[1];
+            $controller = new $nameController;
+            $controller->$actionName(...$matches);
+            break;
+        }
+    }
+    
+    if (!$findRoute) echo "Page not found (404)";
+
+
     $user = new src\Models\Users\User('Ivan');
-    $article  = new src\Models\Articles\Article('title', 'text', $user);
+    $article = new src\Models\Articles\Article('title', 'text', $user);
 
-    var_dump($user);
-    var_dump($article);
-
-
-
-
-
-
-
-// require_once dirname(__DIR__). '/src/Models/Articles/Article.php' ; 
-// require_once dirname(__DIR__). '/src/Models/Users/User.php' ;
-
-// $author = new User('Иван')
-// $article = new Article('Заголовок', 'текст', $author);
-// var_dump($article)
-
-
-?>
+    // var_dump($user);
+    // var_dump($article);
