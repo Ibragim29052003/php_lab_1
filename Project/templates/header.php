@@ -20,17 +20,17 @@
         <li class="nav-item">
           <a class="nav-link" href="<?=dirname($_SERVER['SCRIPT_NAME']);?>/hello/olga">Hello</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?=dirname($_SERVER['SCRIPT_NAME']);?>/say/olga">Hello</a>
-        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="<// ?=dirname($_SERVER['SCRIPT_NAME']);?>/say/olga">Hello</a>
+        </li> -->
 
         <!-- задание 2.1  -->
         <li class="nav-item">
           <a class="nav-link" href="<?=dirname($_SERVER['SCRIPT_NAME']);?>/bye/ibragim">Bye</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?=dirname($_SERVER['SCRIPT_NAME']);?>/say/ibragim">Bye</a>
-        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="<// ?=dirname($_SERVER['SCRIPT_NAME']);?>/say/ibragim">Bye</a>
+        </li> -->
 
       </ul>
     </div>
@@ -38,4 +38,4 @@
 </nav>
 </header>
 <main>
-    <div class="container"></div>
+    <div class="container mt-3"></div>

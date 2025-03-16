@@ -1,7 +1,8 @@
 <?php
 
     return [
-        "~^$~" => [src\Controllers\MainController::class, 'main'],
+        "~article/(\d+)~" => [src\Controllers\ArticleController::class, 'show'],
+        "~^$~" => [src\Controllers\ArticleController::class, 'index'],
         "~^hello/(.*)$~" =>[src\Controllers\MainController::class, 'sayHello'],
         "~^bye/(.*)$~" =>[src\Controllers\MainController::class, 'sayBye'], // задание 2.1 
     ];
