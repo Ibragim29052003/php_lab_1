@@ -1,8 +1,6 @@
 <?php
 
     // http://localhost/PHP_labs/php_laba_1/Project/www/index.php
-
-
 namespace src\Controllers;
 use src\View\View;
 use src\Services\Db;
@@ -20,7 +18,7 @@ class MainController{
     public function sayHello(string $name){
         // // (Задание 2.2) добавляем 'title' => 'Страница приветствия' // передаем ассоциативный массив, который содержит title
         // $this->view->renderHtml('main/hello.php', ['name'=>$name, 'title' => 'Страница приветствия']); // Метод renderHtml() отвечает за то, чтобы скомпилировать шаблон с переданными данными и вывести полученный HTML в браузер.
-        $this->view->renderHtml('main/hello', ['name'=>$name, 'title' => 'Страница приветствия']);
+        $this->view->renderHtml('main/hello.php', ['name'=>$name, 'title' => 'Страница приветствия']);
     }
 
 

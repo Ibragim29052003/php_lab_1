@@ -10,9 +10,8 @@ class Article extends ActiveRecordEntity{
     // private $id;
     private $name;
     private $text;
-    private $authorId;
-    private $createdAt;
-
+    protected $authorId; // исправления
+    protected $createdAt; // исправления
 
     public function getName(){
         return $this->name;
@@ -20,10 +19,29 @@ class Article extends ActiveRecordEntity{
     public function getText(){
         return $this->text;
     }
-    public function getAuthorId(): User
+    // public function getAuthorId(): User
+    // {
+    //     return User::getById($this->authorId);
+    // }
+
+    public function getAuthorId(): ?User // добавление опциональности
     {
-        return User::getById($this->authorId);
+        // return User::getById($this->authorId);
+        $user = User::getById($this->authorId);
+        return $user; // Может быть null, если пользователь не найден
     }
+
+
+    public function setName(string $name){
+        $this->name = $name;
+    }
+    public function setText(string $text){
+        $this->text = $text;
+    }
+    public function setAuthorId(int $id){
+        $this->authorId = $id;
+    }
+    
     protected static function getTableName(): string
     {
         return 'articles';

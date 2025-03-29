@@ -1,7 +1,8 @@
 <?php
 
-    namespace src\Services;
+namespace src\Services;
 
+use Exceptions\DbException;
     class Db{
         private $pdo;
         private static $instance;
@@ -10,17 +11,21 @@
         {
             $dbOptions = require('settings.php');
 
-            $this->pdo = new \PDO(
-                'mysql:host='.$dbOptions['host'].';dbname='.$dbOptions['dbname'],
-                $dbOptions['user'],
-                $dbOptions['password'],
-            );
+            try{
+                $this->pdo = new \PDO(
+            'mysql:host='.$dbOptions['host'].';dbname='.$dbOptions['dbname'],
+        $dbOptions['user'],
+        $dbOptions['password'],
+        );
+            }catch(\PDOException $e){
+                throw new DbException('Ошибка при подключении к базе данных '.$e->getMessage());
+            }
         }
 
         public function query($sql, $params = [], string $className='stdClass') :?array
         {
-            $sth = $this->pdo->prepare($sql);
-            $result = $sth->execute($params);
+            $sth = $this->pdo->prepare($sql); 
+            $result = $sth->execute($params); 
             if ($result == false){
                 return null;
             }
