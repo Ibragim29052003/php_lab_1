@@ -11,6 +11,9 @@ use src\Models\Articles\Article;
 // задание 3.1
 use src\Models\Users\User; // Добавляем use для User
 
+// Задание 6
+use src\Models\Comments\Comment;
+
 
 class ArticleController {
     private $view;
@@ -62,9 +65,13 @@ class ArticleController {
         // Получаем автора статьи
         $author = $article->getAuthorId(); 
 
-        // задание 3.1 
-        // Передаем автора в шаблон 'author' => $author
-        $this->view->renderHtml('article/show', ['article'=>$article, 'author' => $author]); 
+        // Задание 6
+        // Получаем комментарии для статьи
+        $comments = Comment::findByArticleId($id);
+
+        // задание 3.1 & 6
+        // Передаем автора и комментарии в шаблон
+        $this->view->renderHtml('article/show', ['article'=>$article, 'author' => $author, 'comments' => $comments]);
     }
 
 
@@ -97,6 +104,7 @@ class ArticleController {
         return header('Location:http://localhost/PHP_labs/php_laba_1/Project/www/');
     }
 
+    
     
 
     // public function index(){

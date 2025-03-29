@@ -20,4 +20,38 @@
     
   </div>
 </div>
+
+<!-- Форма добавления комментария -->
+<div class="card" style="width: 100%;">
+    <div class="card-body">
+        <h5 class="card-title">Add a Comment</h5>
+        <form action="<?=dirname($_SERVER['SCRIPT_NAME']);?>/article/<?=$article->getId();?>/comments" method="post">
+            <div class="form-group">
+                <label for="comment_text">Comment:</label>
+                <textarea class="form-control" id="comment_text" name="comment_text" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<!-- Отображение существующих комментариев -->
+<?php if (!empty($comments)): ?>
+    <div class="card" style="width: 100%;">
+        <div class="card-body">
+            <h5 class="card-title">Comments</h5>
+            <?php foreach ($comments as $comment): ?>
+                <div class="card" id="comment-<?=$comment->getId();?>">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted"><?=$comment->getAuthorId()->getNickName();?></h6>
+                        <p class="card-text"><?=$comment->getText();?></p>
+                        <p class="card-text"><small class="text-muted"><?=$comment->getCreatedAt();?></small></p>
+                        <a href="<?=dirname($_SERVER['SCRIPT_NAME']);?>/comment/<?=$comment->getId();?>/edit" class="btn btn-sm btn-secondary">Edit</a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+<?php endif; ?>
+
 <?php require dirname(__DIR__).'/footer.php';?>
